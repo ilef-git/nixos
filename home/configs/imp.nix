@@ -4,9 +4,8 @@
   # Nix конфиги
   imports =
     [
+      ./hypr/config.nix
       ./wofi/config.nix
+      ./waybar/config.nix
     ];
-
-  # Оригинальные конфиги
-  xdg.configFile."hypr/hyprland.conf".source = ./hypr/hyprland.conf;
 }

@@ -8,6 +8,7 @@
     git
     kdePackages.dolphin
     vscode
+    waybar
     wofi
   ];
 }
