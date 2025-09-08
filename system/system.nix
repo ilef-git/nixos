@@ -51,4 +51,14 @@
   
  services.xserver.displayManager.gdm.enable = true;
 
+ fonts.packages = with pkgs; [
+    jetbrains-mono
+    noto-fonts
+    noto-fonts-emoji
+    twemoji-color-font
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+  ];
+
 }

@@ -42,3 +42,7 @@ window {
   background-color: #d65d0e;
   color: #ffffff;
 }
+
+* {
+    font-family: "monospace", "Font Awesome 6 Free";
+}
