@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Nix конфиги
   imports =
     [
       ./hypr/config.nix

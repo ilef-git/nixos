@@ -10,5 +10,7 @@
     vscode
     waybar
     wofi
+    telegram-desktop
+    onlyoffice-desktopeditors
   ];
 }
