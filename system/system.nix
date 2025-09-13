@@ -31,25 +31,7 @@
     home-manager
   ];
 
-  # console = {
-  #   font = "latarcyrheb-sun32";
-  #   keyMap = "ru";
-  #   earlySetup = true;
-  #   packages = with pkgs; [
-  #      kbd
-  #    ];
-  # };
-
-  # systemd.services."enable-numlock" = {
-  #   description = "Enable NumLock on TTYs";
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.kbd}/bin/setleds -D +num";
-  #     StandardInput = "tty";
-  #   };
-  # };
-  
- services.xserver.displayManager.gdm.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
  fonts.packages = with pkgs; [
     jetbrains-mono
@@ -60,5 +42,15 @@
     powerline-fonts
     powerline-symbols
   ];
+
+  services.xserver.displayManager.gdm.enable = true;
+
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.dragAndDrop = true;
+  users.extraGroups.vboxusers.members = [ "ilef" ];
+  boot.blacklistedKernelModules = [ "kvm" "kvm_intel" "kvm_amd" ];
+
 
 }
