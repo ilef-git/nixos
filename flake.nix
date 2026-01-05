@@ -18,28 +18,6 @@
     username = "ilef";
   in {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hardware-configuration.nix
-
-          ./default/default.nix
-          ./desktop/desktop.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = {pkgs, ...}: {
-              imports = [
-                ./default/home/home.nix
-                ./desktop/home/home.nix
-              ];
-            };
-          }
-        ];
-      };
-
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit username;};
