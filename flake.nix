@@ -20,8 +20,21 @@
         system = "x86_64-linux";
         modules = [
           ./hardware-configuration.nix
+
           ./default/default.nix
           ./desktop/desktop.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ilef = {pkgs, ...}: {
+              imports = [
+                ./default/home/home.nix
+                ./desktop/home/home.nix
+              ];
+            };
+          }
         ];
       };
 
@@ -29,8 +42,21 @@
         system = "x86_64-linux";
         modules = [
           ./hardware-configuration.nix
+
           ./default/default.nix
           ./laptop/laptop.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ilef = {pkgs, ...}: {
+              imports = [
+                ./default/home/home.nix
+                ./laptop/home/home.nix
+              ];
+            };
+          }
         ];
       };
     };
