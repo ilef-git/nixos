@@ -4,10 +4,12 @@
   lib,
   ...
 }:
-lib.mkMerge {
-  networking.hostName = "laptop";
+lib.mkMerge [
+  {
+    networking.hostName = "laptop";
 
-  environment.systemPackages = with pkgs; [
-    fastfetch
-  ];
-}
+    environment.systemPackages = with pkgs; [
+      fastfetch
+    ];
+  }
+]
