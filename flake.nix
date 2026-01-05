@@ -54,6 +54,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username} = {pkgs, ...}: {
+              _module.args = {inherit username;};
               imports = [
                 ./default/home/home.nix
                 ./laptop/home/home.nix
