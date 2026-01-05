@@ -1,4 +1,6 @@
-{
+let
+  username = "ilef";
+in {
   description = "Моя система";
 
   inputs = {
@@ -28,7 +30,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ilef = {pkgs, ...}: {
+            home-manager.users.${username} = {pkgs, ...}: {
               imports = [
                 ./default/home/home.nix
                 ./desktop/home/home.nix
@@ -40,6 +42,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit username;};
         modules = [
           ./hardware-configuration.nix
 
@@ -50,7 +53,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ilef = {pkgs, ...}: {
+            home-manager.users.${username} = {pkgs, ...}: {
               imports = [
                 ./default/home/home.nix
                 ./laptop/home/home.nix

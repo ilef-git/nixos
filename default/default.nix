@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  username,
   ...
 }: {
   # Bootloader.
@@ -73,9 +74,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ilef = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "ilef";
+    description = "${username}";
     extraGroups = ["networkmanager" "wheel"];
   };
 
