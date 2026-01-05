@@ -28,6 +28,7 @@
         system = "x86_64-linux";
         modules = [
           ./default/default.nix
+          ./hardware-configuration.nix
           ./laptop/laptop.nix
         ];
       };
