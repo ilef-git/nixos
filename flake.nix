@@ -23,7 +23,6 @@
         specialArgs = {inherit username;};
         modules = [
           ./hardware-configuration.nix
-
           ./default/default.nix
           ./laptop/laptop.nix
 
@@ -32,7 +31,11 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username} = {pkgs, ...}: {
-              _module.args = {inherit username;};
+              home.username = "${username}";
+              home.homeDirectory = "/home/${username}";
+              home.stateVersion = "25.11";
+              programs.home-manager.enable = true;
+
               imports = [
                 ./default/home/home.nix
                 ./laptop/home/home.nix
