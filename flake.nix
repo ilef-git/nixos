@@ -1,6 +1,4 @@
-let
-  username = "ilef";
-in {
+{
   description = "Моя система";
 
   inputs = {
@@ -16,7 +14,9 @@ in {
     self,
     nixpkgs,
     home-manager,
-  }: {
+  }: let
+    username = "ilef";
+  in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
