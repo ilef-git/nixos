@@ -1,19 +1,8 @@
-# Клонирование репозитория
-nix-shell -p git
-git clone https://github.com/ilef-git/nixos.git
-cd ./nixos
-
-# Копирование аппаратной конфигурации
-cp /etc/nixos/hardware-configuration.nix .
-
-# Редактирование flake.nix
-nano flake.nix
-
-# Заменить в файле:
-# username = "ilef";
-# на ваше имя
-
-# Сохранить изменения (Ctrl+S) и выйти (Ctrl+X)
-
-# Применить конфигурацию
-sudo nixos-rebuild switch --flake .#laptop
+1. `nix-shell -p git`
+2. `git clone https://github.com/ilef-git/nixos.git`
+3. `cd ./nixos`
+4. `cp /etc/nixos/hardware-configuration.nix .`
+5. `nano flake.nix`
+6. заменить `username = "ilef";` на ваше имя
+7. `Ctrl+S` → `Ctrl+X`
+8. `sudo nixos-rebuild switch --flake .#laptop`
