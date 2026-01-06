@@ -3,6 +3,6 @@
 3. ```cd ./nixos```
 4. ```cp /ets/nixos/hardware-configuration.nix ./```
 5. ```nano flake.nix```
-    1. rename ```username = "ilef";``` to you name
+    1. rename ```username = "ilef";``` to you username
     2. Ctrl+S, Ctrl+X
 6. ```sudo nixos-rebuild switch --flake .#laptop```

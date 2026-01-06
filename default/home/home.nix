@@ -3,7 +3,9 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    fastfetch
+  imports = [
+    ./pkgs.nix
+    ./hyprland.nix
+    ./wofi.nix
   ];
 }
