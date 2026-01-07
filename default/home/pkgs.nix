@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     fastfetch
-    ptyxis
-    wofi
+    onlyoffice-desktopeditors
+    telegram-desktop
   ];
 }
